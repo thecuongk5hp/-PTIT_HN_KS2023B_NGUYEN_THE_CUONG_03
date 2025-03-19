@@ -1,30 +1,30 @@
 package ra.presentation;
 
-import ra.entity.Employee;
+import ra.bussiness.EmployeeBusiness;
 
 import java.util.Scanner;
 
 public class EmployeeApplication {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Employee[] employees = new Employee[100];
-        Scanner scanner;
-        int Choice1 = scanner.nextInt();
-        scanner.nextLine();
-        do {
-            System.out.println("-------------------Employee Menu-----------------");
-            System.out.println("1. Hien thi danh sach nhan vien");
-            System.out.println("2. Them moi nhan vien");
-            System.out.println("3.Chinh sua thong tin nhan vien");
-            System.out.println("4.Xoa nhan vien");
-            System.out.println("5.Tim kiem nhan vien");
-            System.out.println("6.Sap xep");
-            System.out.println("0.Thoat chuong trinh");
-            switch (choice1) {
+        EmployeeBusiness EmplB = new EmployeeBusiness();
+        while (true) {
+            System.out.println("=================EMPLOYEE MENU=================");
+            System.out.println("1. Hiển thị danh sách nhân viên");
+            System.out.println("2. Thêm mới nhân viên");
+            System.out.println("3. Chỉnh sửa thông tin sinh viên");
+            System.out.println("4. Xóa nhân viên");
+            System.out.println("5. Tìm kiếm nhân viên");
+            System.out.println("6. Sắp xếp");
+            System.out.println("0.Thoát chương trình");
+            System.out.println("Mời bạn chọn chức năng: ");
+            int choice = sc.nextInt();
+            switch (choice) {
                 case 1:
-
+                    EmplB.displayAllEmployees();
                     break;
                 case 2:
+                    EmplB.addEmployee(sc);
                     break;
                 case 3:
                     break;
@@ -35,11 +35,11 @@ public class EmployeeApplication {
                 case 6:
                     break;
                 case 0:
-                    System.out.println("Thoat chuong trinh");
+                    System.out.println("Đang thoát chương trình...");
+                    System.exit(0);
                 default:
-                    System.err.println("Nhap tu 0-6");
+                    System.out.println("lựa chọn ko hợp lệ vui lòng thử lại...");
             }
-        } while (true);
-
+        }
     }
 }
