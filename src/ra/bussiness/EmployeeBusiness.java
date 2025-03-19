@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class EmployeeBusiness {
     private Employee[] emp = new Employee[100];
-    private int count = 0
+    private int count = 0;
 
     public void addEmployee(Scanner sc) {
         if (count >= emp.length) {
